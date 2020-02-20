@@ -32,11 +32,13 @@ h1 {
   font-size: 4rem;
   text-align: center;
   text-shadow: 2px 2px 10px black;
+  font-weight: normal;
 }
 
 h2 {
   font-size: 3rem;
   text-align: center;
+  font-weight: bold;
 }
 
 h3 {
@@ -62,7 +64,7 @@ body > * {
 }
 
 main, header, nav, article, aside, footer, section {
-  background-color: #4D9BE8;
+  background-color:  rgba(22, 102, 177, 0.5);
   padding: 1%;
 }
 
