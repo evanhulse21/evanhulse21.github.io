@@ -1,21 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
     <title>Lab 4</title>
-    <link src="./style.css" type="text/stylesheet" />
-</head>
-<body>
-    <div>
-        <h1 class="header">Evan Hulse's Lab 4</h1>
-    </div>
-    <div class="content">
-        hello world
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="wrapper">
+        <div class="header">Evan's Lab 4 </div>
+        <button class="button" onclick="clickMe()">
+          Click me to make a change
+        </button>
+        <div class="content">
+          <p>
+            Retro fam narwhal hoodie meggings viral bushwick yr chartreuse.
+            Chartreuse seitan banh mi selfies, woke ennui venmo craft beer. Air
+            plant tumeric retro DIY iPhone poutine. +1 gastropub chillwave,
+            cronut glossier pork belly tacos poke next level fanny pack vegan
+            jianbing lo-fi.
+          </p>
+        </div>
+        <div class="footer"></div>
+      </div>
     </div>
     <script>
+          var name = "Evan";
+          var myName = "EvanHulse";
+        var n = name.length;
+        var x = myName.substr(2,1);
+        var y = x.toUpperCase();
+          var last = myName.substr(myName.length-3);
+          var firstName = myName.split(' ').slice(0, -1).join(' ');
+          var lastName = myName.split(' ').slice(-1).join(' ');
+          var countFirst = firstName.length;
+          var countLast = lastName.length;
+          var countName = countFirst + countLast;
+      function clickMe() {
+        const content = document.querySelector(".content");
+        content.innerHTML = "Hello world <br/> <br/>" + "My name has " + n + " characters <br/> <br/>" +
+         " The third character in my name is " +
+      y + " <br/>" + last;
+      }
+      const headerContent = document.querySelector(".header");
+      headerContent.innerHTML = "Evan's Lab 4 " + countName;
+  
+
     </script>
-    <script src="scripts/main.js"></script>
-</body>
+  </body>
 </html>
