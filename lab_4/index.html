@@ -26,13 +26,14 @@
     </div>
     <script>
           var name = "Evan";
-          var myName = "EvanHulse";
+          var myName = "Evan Hulse";
         var n = name.length;
         var x = myName.substr(2,1);
         var y = x.toUpperCase();
           var last = myName.substr(myName.length-3);
-          var firstName = myName.split(' ').slice(0, -1).join(' ');
-          var lastName = myName.split(' ').slice(-1).join(' ');
+          var space = myName.indexOf(' ');
+          var firstName = myName.substring(0,space);
+          var lastName = myName.substring(space+1); 
           var countFirst = firstName.length;
           var countLast = lastName.length;
           var countName = countFirst + countLast;
@@ -49,3 +50,4 @@
     </script>
   </body>
 </html>
+
