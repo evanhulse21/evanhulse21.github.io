@@ -2,6 +2,9 @@ h1 {
   font-family: helvetica, arial, sans-serif;
   text-align: center;
 }
+h2{
+  text-align:center;
+}
 
 body {
   width: 640px;
@@ -13,6 +16,8 @@ body {
   display: block;
   width: 640px;
   height: 480px;
+  margin-left: auto;
+  margin-right:auto;
 }
 
 .overlay {
@@ -40,4 +45,14 @@ button {
   width: 20%;
   float: left;
   cursor: pointer;
+}
+@media screen and (max-width:1000px){
+  .h1{
+    display:flex
+  }
+  .h2{
+    display:flex;
+    flex-direction:row;
+    justify-content: space-evenly;
+  }
 }
