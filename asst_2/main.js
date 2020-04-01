@@ -20,6 +20,7 @@ function display(source){
     displayedImage.setAttribute('src',source);
 }
 /* Wiring up the Darken/Lighten button */
+/*Base code found using MDN*/
 btn.onclick = function(){
     const btnClass = btn.getAttribute('class');
     if(btnClass === 'dark'){
