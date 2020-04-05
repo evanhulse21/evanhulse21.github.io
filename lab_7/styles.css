@@ -101,3 +101,19 @@ h3 {
   position: relative;
   top: 1px;
 }
+#mapid{
+  height:480px;
+  width: 640px;
+  border-radius: 15px;
+}
+.leaflet-popup-content,
+.leaflet-popup-tip {
+  background:white;
+  box-shadow: 0 3px 14px rgba(83, 145, 226, 0.507);
+  font-size: 14px;
+  border: black;
+  font-family: 'Times New Roman', Times, serif;
+  text-align: center;
+  text-transform: capitalize;
+}
+
