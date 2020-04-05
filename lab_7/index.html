@@ -38,9 +38,9 @@
           zoomOffset: -1,
           accessToken: 'pk.eyJ1IjoiYWxvZnR1czMiLCJhIjoiY2s4ajlrbG44MDN5YTNmcW5xN3cyY2lxMyJ9.qO8YsrQNp_sG-xVtvQaQkw'
         }).addTo(mymap);
-        const marker1 = L.marker([38.993322, -76.945238]).addTo(mymap);
-        const str1 = "<b>Eppely Recreaction Center</b><br>Closed due to COVID-19!";
-        marker1.bindPopup(str1).openPopup();
+        const m1 = L.marker([38.993322, -76.945238]).addTo(mymap);
+        const s1 = "<b>Eppely Recreaction Center</b><br>Closed due to COVID-19!";
+        m1.bindPopup(s1).openPopup();
 
 let o;
 let marks = [];
@@ -54,21 +54,21 @@ fetch('https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json')
 .then(() => {
   for (let i=0; i<o.length; i++){
             if (o[i].name ==  "FEDEX FIELD - 133-141 MAIN SE" && marks.includes("FEDEX FIELD - 133-141 MAIN SE")==false){
-              const str2 = "<b>"+o[i].name+"</b><br>" + o[i].address_line_1;
-              const marker2 = L.marker([o[i].geocoded_column_1.coordinates[1],o[i].geocoded_column_1.coordinates[0]]).addTo(mymap);
-              marker2.bindPopup(str2).openPopup();
+              const s2 = "<b>"+o[i].name+"</b><br>" + o[i].address_line_1;
+              const m2 = L.marker([o[i].geocoded_column_1.coordinates[1],o[i].geocoded_column_1.coordinates[0]]).addTo(mymap);
+              m2.bindPopup(s2).openPopup();
               marks.push(o[i].name);
             }
             if (o[i].name ==  "BOWIE STATE UNIVERSITY - MARVELOUS MARKET" && marks.includes("BOWIE STATE UNIVERSITY - MARVELOUS MARKET")==false){
-              const str3 = "<b>"+o[i].name+"</b><br>" + o[i].address_line_1;
-              const marker3 = L.marker([o[i].geocoded_column_1.coordinates[1],o[i].geocoded_column_1.coordinates[0]]).addTo(mymap);
-              marker3.bindPopup(str3).openPopup();
+              const s3 = "<b>"+o[i].name+"</b><br>" + o[i].address_line_1;
+              const m3 = L.marker([o[i].geocoded_column_1.coordinates[1],o[i].geocoded_column_1.coordinates[0]]).addTo(mymap);
+              m3.bindPopup(s3).openPopup();
               marks.push(o[i].name);
             }
             if (o[i].name == "MCDONALDS" && marks.includes("MCDONALDS")==false){
-              const str4 = "<b>"+o[i].name+"</b><br>" + o[i].address_line_1;
-              const marker4 = L.marker([o[i].geocoded_column_1.coordinates[1],o[i].geocoded_column_1.coordinates[0]]).addTo(mymap);
-              marker4.bindPopup(str4).openPopup();
+              const s4 = "<b>"+o[i].name+"</b><br>" + o[i].address_line_1;
+              const m4 = L.marker([o[i].geocoded_column_1.coordinates[1],o[i].geocoded_column_1.coordinates[0]]).addTo(mymap);
+              m4.bindPopup(s4).openPopup();
               marks.push(o[i].name);
           }
         }
