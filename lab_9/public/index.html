@@ -1,25 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <title>Replace Me With Your Lab Page</title>
-  <link rel="stylesheet" type="text/css" href="./styles.css">
-</head>
-
-<body>
-  <div class="container">
-    <div class="wrapper">
-      <div class="header">Replace Me With Your Lab Page</div>
-      <div class="content"></div>
-      <div class="footer"></div>
+  <head>
+    <title>Lab 9</title>
+    <link rel="stylesheet" type="text/css" href="./styles.css" />
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="wrapper">
+        <div class="header">Lab 9</div>
+        <div class="content">
+         <div id="chartContainer"style="height: 600px; width: 100%;"></div>
+    
+         </div>
+        </div>
+        <div class="footer"></div>
+      </div>
     </div>
-  </div>
   <script>
     fetch('/api') // Rather than fetching from PG County, we're going to fetch from our own server.
       .then(res => res.json())
       .then(res => {
-        // Here's where your chart code should go.
+          console.log(res);
+          newRes = res[Object.keys(res)[0]];
+        console.log(newRes);
+        return newRes;
+        //return res;
       })
+      .then(results => {
+        console.log(results);
+        // Here's where your chart code should go.
+        const chart = new CanvasJS.Chart("chartContainer",{
+            animationEnabled: true,
+            theme: "light2",
+            title: {
+              text: "Let's Find Somewhere To Eat"
+            },
+            colorSet:"colorSet3",
+            axisX: {
+              title: "Categories",
+              labelFontSize:8,
+              margin:10,
+              labelAngel:-75,
+              interval:1
+            },
+            axisY: {
+              title:"Number of Places To Eat",
+              interlacedColor: "#93baf7",
+		          gridColor: "#93baf7",
+              interval:10,
+              scaleBreaks:{
+                type: "wavy",
+                color: "#f10e38",
+                customBreaks: [{
+                  startValue: 20,
+                  endValue: 35,
+                },{
+                  startValue:60,
+                  endValue:120
+                },{
+                  startValue:160,
+                  endValue:220
+                }
+              ]
+              }
+            },
+            data: [{
+              type: "bar",
+              dataPoints: results
+            }]
+          });
+          function compareDataPointYAscend(dataPoint1, dataPoint2) {
+		      return dataPoint1.y - dataPoint2.y;
+          }
+          chart.options.data[0].dataPoints.sort(compareDataPointYAscend);
+          chart.render();
+        })
   </script>
 </body>
 
