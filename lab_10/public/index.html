@@ -58,8 +58,7 @@
       }
       function getForm(e){
         e.preventDefault(); 
-        const name = document.querySelector(".username");
-        name.innerHTML += "<b>Name</b>" + "<b>Zip Code</b>" + "<b>Interests Form</b>";
+      
        
         fetch("/api", {
           method: "GET",

@@ -76,14 +76,14 @@ app
     console.log("/api put request", res);
     if(!req.body.name || !req.body.zip_code){
       console.log(req.body);
-      res.status("418").json("Heck Yeah It Works! ");
+      res.status("418").json("Something went wrong, please enter your name and zip ");
     }
     else{
       let username = [req.body.name, req.body.zip_code, req.body.interests]
       writeUser(username, dbSettings)
       .then((result) => {
         console.log(result);
-        res.json("something went wrong, please enter your name and zip code"); // simple mode
+        res.json("Heck Yeah It Works"); // simple mode
       })
         .catch((err) => {
           console.log(err);
